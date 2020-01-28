@@ -6,18 +6,21 @@ class CategoriesSections extends StatefulWidget {
 }
 
 class _CategoriesSectionsState extends State<CategoriesSections> {
-  final List<String> categories = ['Notes', 'Important', 'Notes', 'Notes'];
+  final List<String> categories = ['Notes', 'Important', 'Home', 'Completed'];
+  final List<String> listings = ['112', '31', '15', '8'];
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(left: 30.0),
       height: 250.0,
-      color: Colors.lightGreen,
+      //color: Colors.lightGreen,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: categories.length,
         itemBuilder: (BuildContext context, int index) {
           return Container(
+            margin: EdgeInsets.only(right: 20.0),
+            padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
             decoration: BoxDecoration(
               color: Colors.lightBlue,
               borderRadius: BorderRadius.only(
@@ -33,6 +36,15 @@ class _CategoriesSectionsState extends State<CategoriesSections> {
               children: <Widget>[
                 Text(
                   categories[index],
+                  style: TextStyle(
+                    fontSize: 25.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+                SizedBox(height: 150.0),
+                Text(
+                  listings[index],
                   style: TextStyle(
                     fontSize: 25.0,
                     fontWeight: FontWeight.bold,
